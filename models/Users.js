@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 
 const UsersSchema = new Schema({
     name:{
-        type: String,
-    
+        type: String,    
         unique:true
     },
     password:{
@@ -23,7 +22,16 @@ const UsersSchema = new Schema({
     timestamp:{
         type : Date,
         default :Date.now
-    }
+    },
+    reputation:{
+        type : Number,
+        default: 1
+    },
+    vote: {
+        type: Number,
+        default : 0
+    }, 
+    description: String
 });
 
 module.exports = mongoose.model('Users', UsersSchema);

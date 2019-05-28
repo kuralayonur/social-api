@@ -14,7 +14,11 @@ const PostsSchema = new Schema({
         type:Date,
         default:Date.now
     },
-    image_ipfs:String
+    image_ipfs:String,
+    money: {
+        type: Number,
+        default: 0
+    }
 });
 
 module.exports = mongoose.model('Posts', PostsSchema);
